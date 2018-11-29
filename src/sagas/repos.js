@@ -1,11 +1,12 @@
 import { CHANGE_LOADING_STATUS, FILTER_REPOS, PUT_REPOS } from '../constants/action-constants';
-import { call, put } from 'redux-saga/effects';
 
-import RepoListAPI from '../apis/repoList';
+import { ALL_REPOS } from '../constants/api';
+import axios  from 'axios';
+import { put } from 'redux-saga/effects';
 
 export function* getRepoList() {
     yield put({type:CHANGE_LOADING_STATUS});
-    let response = yield call(RepoListAPI.get);
+    let response = yield axios.get(ALL_REPOS());
     response = response ? response.data : [];
     
     let payload = response.map((repoInfo)=>{
