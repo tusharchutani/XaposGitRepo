@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
 import InputBase from '@material-ui/core/InputBase';
 import MaterialAppBar from '@material-ui/core/AppBar';
 import { SEARCH_REPOS_FETCH } from '../../constants/action-constants'
@@ -26,7 +27,18 @@ class AppBar extends Component {
             <Typography variant="h6" color="inherit" noWrap>
               Facebook's Git Repo
             </Typography>
+
+            { this.props.isLoading &&
+            <div className={classes.loadingContainer}>
+              <CircularProgress color="secondary" className={classes.circularProgress}/>
+            </div>}
+            <div>            
+              
+            </div>
+
             <div className={classes.grow} />
+
+
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -47,7 +59,9 @@ class AppBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    isLoading: state.loading
+  };
 }
 const mapDispatchToProps = (dispatch) => {
   return{

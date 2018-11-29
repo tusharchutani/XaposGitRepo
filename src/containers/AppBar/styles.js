@@ -44,6 +44,9 @@ const styles = theme => ({
       },
     },
   },
+  circularProgress:{
+    zIndex:theme.zIndex.appBar+2
+  },
   searchIcon: {
     width: theme.spacing.unit * 9,
     height: '100%',
@@ -52,6 +55,10 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  loadingContainer:{
+    display: 'flex',
+    paddingLeft:theme.spacing.unit*2
   }
 });
 

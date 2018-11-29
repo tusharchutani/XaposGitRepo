@@ -9,29 +9,8 @@ import {Pie} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
-
-//TODO: put this is in a seperate file
-const styles = theme => ({
-  repoInfoContainer:{
-    flexGrow: 1,
-    //TODO: move these magic numbers in a constant
-    paddingTop: '100px',
-    paddingLeft:'30px'
-  },
-  margin: {
-    margin: theme.spacing.unit,
-  },
-  gitClone:{
-    width:450
-  },
-  textField:{
-    width:'75%'
-  },
-  section:{
-    paddingBottom:'30px',
-  }
-});
 
 let Section = (props) => {
   const { classes } = props;
@@ -54,9 +33,7 @@ class GeneralInfo extends Component {
 
   constructor(props){
     super(props);
-    //TODO: remove this state
     this.state = {
-      readMe:'',
       currentView:0
     }
   }
@@ -64,6 +41,7 @@ class GeneralInfo extends Component {
     
     const {classes, data} = this.props;
 
+    //get random colours for the chart
     var dynamicColors = function() {
       var r = Math.floor(Math.random() * 200);
       var g = Math.floor(Math.random() * 200);

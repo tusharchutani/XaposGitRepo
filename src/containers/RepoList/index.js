@@ -6,6 +6,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import MenuItem from '../../components/MenuItem';
 import { connect } from "react-redux";
+import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
 class Repolist extends Component {
@@ -71,23 +72,6 @@ class Repolist extends Component {
     
   }
 }
-//TODO: move to a seperate jss file 
-const drawerWidth = 330;
-
-const styles = theme => ({
-
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  list:{
-      width:'100%'
-  },
-  toolbar: theme.mixins.toolbar,
-});
 
 const mapStateToProps = (state) =>{
   return {

@@ -1,9 +1,10 @@
-import { FILTER_REPOS, PUT_REPOS } from '../constants/action-constants';
+import { CHANGE_LOADING_STATUS, FILTER_REPOS, PUT_REPOS } from '../constants/action-constants';
 import { call, put } from 'redux-saga/effects';
 
 import RepoListAPI from '../apis/repoList';
 
 export function* getRepoList() {
+    yield put({type:CHANGE_LOADING_STATUS});
     let response = yield call(RepoListAPI.get);
     response = response ? response.data : [];
     
@@ -30,12 +31,17 @@ export function* getRepoList() {
         type: PUT_REPOS,
         payload
     });
+    yield put({type:CHANGE_LOADING_STATUS});
 }
 
 export function* searchRepos(action){
+    yield put({type:CHANGE_LOADING_STATUS});
+
     const query = action.payload;
     yield put({
         type: FILTER_REPOS,
         payload: query
     });
+    
+    yield put({type:CHANGE_LOADING_STATUS});
 }

@@ -12,6 +12,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 import { connect } from "react-redux";
 import { isEmpty } from 'lodash';
+import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
 class RepoInfo extends Component {
@@ -39,7 +40,7 @@ class RepoInfo extends Component {
     <div className="repoInfo">          
     <Typography gutterBottom color="textPrimary" component="h1" variant="display1"> {data.fullName} </Typography>
       <a href={data.htmlURL}>{data.htmlURL}</a>
-    <Divider/>
+    <Divider className={classes.titleDivider}/>
 
     <Tabs centered value={currentView} onChange={this.viewChange}>
       <Tab icon={<InfoIcon/>} />
@@ -70,27 +71,6 @@ class RepoInfo extends Component {
     );
   }
 }
-
-const styles = theme => ({
-  repoInfoContainer:{
-    flexGrow: 1,
-    //TODO: move these magic numbers in a constant
-    paddingTop: '100px',
-    paddingLeft:'30px'
-  },
-  margin: {
-    margin: theme.spacing.unit,
-  },
-  gitClone:{
-    width:450
-  },
-  textField:{
-    width:'75%'
-  },
-  tabInfoDivider:{
-    marginBottom:20
-  }
-});
 
 const mapStateToProps = (state) =>{
 

@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import OpenIcon from '@material-ui/icons/OpenInNew';
 import PropTypes from 'prop-types';
+import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
 //TODO: Concider making this pure component
@@ -53,17 +54,6 @@ class Contrubters extends Component {
     );
   }
 }
-
-const styles = theme => ({
-    contributorContainer:{
-        minWidth:160
-    },
-    userProfilePic: {
-        margin: 10,
-        width: 60,
-        height: 60,
-      }
-});
 
 
 Contrubters.PropTypes = {
