@@ -24,16 +24,10 @@ class RepoInfo extends Component {
       currentView:0
     }
   }
-  componentDidMount(){
-  }
 
   viewChange = (event, value) =>{
     this.setState({currentView:value});
   }
-  renderNoSelectedRepo(){
-
-  }
-
   renderRepoInfo(data){
     const { classes } = this.props;
     const { currentView } = this.state;
