@@ -31,7 +31,7 @@ const styles = theme => ({
         height: userProfilePicHeightWidth,
     },
     section:{
-      paddingBottom: theme.spacing.unit*4
+      paddingBottom: theme.spacing.unit*2
     }
 });
 
