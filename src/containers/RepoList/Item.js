@@ -16,8 +16,8 @@ class Item extends Component {
   
   formatText = (text)=>{
     const maxCharCount = "75";
-    if(text == null){
-      return "-"
+    if(text === null){
+      return "No description"
     }
     if(text.length > 75){
       text = text.substring(0,maxCharCount) + "...";
@@ -41,7 +41,7 @@ class Item extends Component {
                 <Typography variant="title" color="textPrimary"> {this.props.name} </Typography>
                 <Typography color="textSecondary"> {this.formatText(this.props.description)} </Typography>
                 <div>
-                  <Tooltip title={`${this.props.watcherCount} watchers`}>
+                  <Tooltip  title={`${this.props.watcherCount} watchers`}>
                     <Chip 
                     className={classes.margin} 
                     color="primary" 
@@ -67,6 +67,14 @@ class Item extends Component {
       </Card>
     );
   }
+}
+
+Item.defaultProps = {
+  name:'-',
+  description:'No description',
+  watcherCount:0,
+  starsCount:0,
+  forkCount:0
 }
 
 export default withStyles(styles)(Item);
