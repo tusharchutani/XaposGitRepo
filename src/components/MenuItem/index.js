@@ -7,6 +7,7 @@ import Chip from '@material-ui/core/Chip';
 import EyeIcon from '@material-ui/icons/RemoveRedEyeRounded';
 import ForkIcon from '@material-ui/icons/CallSplit'
 import StarIcon from '@material-ui/icons/Star';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
@@ -40,20 +41,26 @@ class MenuItem extends Component {
                 <Typography variant="title" color="textPrimary"> {this.props.name} </Typography>
                 <Typography color="textSecondary"> {this.formatText(this.props.description)} </Typography>
                 <div>
+                  <Tooltip title={`${this.props.watcherCount} watchers`}>
                     <Chip 
                     className={classes.margin} 
                     color="primary" 
                     label={this.props.watcherCount}
                      icon={<EyeIcon />} />
-                    <Chip 
-                    className={classes.margin} 
-                    color="secondary" 
-                    label={this.props.starsCount} icon={<StarIcon />} />
-                    <Chip 
-                    className={classes.margin} 
-                    label={this.props.forkCount}
-                    icon={<ForkIcon/>}
-                    />
+                    </Tooltip>
+                    <Tooltip title={`${this.props.starsCount} Stars`}>
+                      <Chip 
+                      className={classes.margin} 
+                      color="secondary" 
+                      label={this.props.starsCount} icon={<StarIcon />} />
+                    </Tooltip>
+                    <Tooltip title={`${this.props.forkCount} Forks`}>
+                      <Chip 
+                      className={classes.margin} 
+                      label={this.props.forkCount}
+                      icon={<ForkIcon/>}
+                      />
+                    </Tooltip>
                 </div>
             </CardContent>
         </CardActionArea>

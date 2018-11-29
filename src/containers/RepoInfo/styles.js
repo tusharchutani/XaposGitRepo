@@ -1,7 +1,10 @@
+const userProfilePicHeightWidth = 70;
 const styles = theme => ({
     repoInfoContainer:{
         flexGrow: 1,
+        overflowX:'hidden',
         paddingTop: theme.spacing.unit*10,
+        paddingBottom: theme.spacing.unit*2,
         paddingLeft:theme.spacing.unit*7
       },
       margin: {
@@ -20,9 +23,9 @@ const styles = theme => ({
         marginTop: theme.spacing.unit
     },
     userProfilePic: {
-        margin: 10,
-        width: 60,
-        height: 60,
+        margin: theme.spacing.unit*2,
+        width: userProfilePicHeightWidth,
+        height: userProfilePicHeightWidth,
     },
     section:{
       paddingBottom: theme.spacing.unit*4
