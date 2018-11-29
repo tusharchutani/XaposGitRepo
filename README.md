@@ -31,6 +31,7 @@ For this project the following stack was used:
 - Material UI
 - lodash
 - Chart.js
+- Moment (for time conversions)
 
 ## Test plan 
 Since the app is very small we are mostly going to testing each part of the app in isolation. We will be using Jest and Enzyme for unit testing. We shall be testing:
