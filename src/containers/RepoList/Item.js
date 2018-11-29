@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
-class MenuItem extends Component {
+class Item extends Component {
   
   formatText = (text)=>{
     const maxCharCount = "75";
@@ -69,4 +69,4 @@ class MenuItem extends Component {
   }
 }
 
-export default withStyles(styles)(MenuItem);
+export default withStyles(styles)(Item);

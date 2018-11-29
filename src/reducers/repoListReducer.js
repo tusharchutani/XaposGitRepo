@@ -2,8 +2,8 @@ import { FILTER_REPOS, PUT_REPOS } from '../constants/action-constants'
 
 import { filter } from 'lodash';
 
-const defaultState = { fullList:[], filteredList:[],isSearching:false}
-// Collect results from methods
+const defaultState = { fullList:[], filteredList:[],isSearching:false }
+
 export default function repoListReducer(state = defaultState, action) {
   const {type, payload } = action
     switch (type) {
@@ -11,7 +11,7 @@ export default function repoListReducer(state = defaultState, action) {
         return {...state, fullList:payload};
       case FILTER_REPOS:
         return filterRepos(payload, state);
-      default: return state; // return initial state by default
+      default: return state;
     }
   }
 

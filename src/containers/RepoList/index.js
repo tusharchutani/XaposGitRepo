@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
+import Item from './Item';
 import List from '@material-ui/core/List';
-import MenuItem from '../../components/MenuItem';
 import { connect } from "react-redux";
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
@@ -60,12 +60,7 @@ class Repolist extends Component {
         <div className={classes.toolbar} />
         <Divider />
         <List className={classes.list}>
-            {repos.map((repo, index)=> {
-            if(index === this.state.selected){
-                return (<MenuItem selected={true} repoIndex={index} onSelect={this.onSelect} key={index} {...repo}/>);
-              }
-              return (<MenuItem repoIndex={index} onSelect={this.onSelect} key={index} {...repo}/>);
-            })}
+            {repos.map((repo, index)=> (<Item selected={index === this.state.selected} repoIndex={index} onSelect={this.onSelect} key={index} {...repo}/>))}
         </List> 
         </Drawer>
     </nav>);

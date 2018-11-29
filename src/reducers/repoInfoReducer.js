@@ -7,6 +7,6 @@ export default function repoInfoReducer(state = defaultState, action) {
       case PUT_REPO_INFO:
 
         return {...action.payload};
-      default: return state; // return initial state by default
+      default: return state;
     }
   }
