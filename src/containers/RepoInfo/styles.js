@@ -10,6 +10,9 @@ const styles = theme => ({
       margin: {
         margin: theme.spacing.unit,
       },
+      repoTitle:{
+        marginBottom:0
+      },
       gitClone:{
         width:450
       },

@@ -13,6 +13,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { connect } from "react-redux";
 import { isEmpty } from 'lodash';
+import moment from 'moment';
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -28,12 +29,18 @@ class RepoInfo extends Component {
   viewChange = (event, value) =>{
     this.setState({currentView:value});
   }
+  getTimeAgo = (time) =>{
+    const da = moment(time).fromNow();
+    console.log(da);
+    return da;
+  }
   renderRepoInfo(data){
     const { classes } = this.props;
     const { currentView } = this.state;
     return (         
     <div className="repoInfo">          
-    <Typography gutterBottom color="textPrimary" variant="h4"> {data.fullName} </Typography>
+    <Typography gutterBottom color="textPrimary" className={classes.repoTitle} variant="h4"> {data.fullName} </Typography>
+    <Typography gutterBottom color="textSecondary">Last updated {this.getTimeAgo(data.lastUpdated)}</Typography>
       <a href={data.htmlURL}>{data.htmlURL}</a>
     <Divider className={classes.titleDivider}/>
 
