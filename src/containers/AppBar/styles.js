@@ -6,8 +6,7 @@ const styles = theme => ({
     display: 'flex',
   },
   appBar: {
-    width: `calc(100% - ${sideMenuWidth}px)`,
-    marginLeft: sideMenuWidth,
+    zIndex: theme.zIndex.drawer + 1,
   },
   grow: {
     flexGrow: 1,
