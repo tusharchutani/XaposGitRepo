@@ -19,9 +19,6 @@ const styles = theme => ({
     titleDivider:{
         marginTop: theme.spacing.unit
     },
-    contributorContainer:{
-        minWidth:160
-    },
     userProfilePic: {
         margin: 10,
         width: 60,

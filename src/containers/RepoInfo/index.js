@@ -9,6 +9,7 @@ import MarkDownFile from '../../components/markDownFile';
 import PeopleIcon from '@material-ui/icons/People';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { connect } from "react-redux";
 import { isEmpty } from 'lodash';
@@ -43,9 +44,15 @@ class RepoInfo extends Component {
     <Divider className={classes.titleDivider}/>
 
     <Tabs centered value={currentView} onChange={this.viewChange}>
-      <Tab icon={<InfoIcon/>} />
-      <Tab icon={<CodeIcon/>} />
-      <Tab icon={<PeopleIcon/>}/>
+      <Tooltip title="General Info">
+        <Tab icon={<InfoIcon/>} />
+      </Tooltip>
+      <Tooltip title="Read me">
+        <Tab icon={<CodeIcon/>} />
+      </Tooltip>
+      <Tooltip title="Contributors">
+        <Tab icon={<PeopleIcon/>}/>
+      </Tooltip>
     </Tabs>
     <Divider className={classes.tabInfoDivider}/>
     {currentView === 0 && <GeneralInfo data={data}/>}

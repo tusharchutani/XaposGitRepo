@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import {Pie} from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
@@ -113,9 +114,11 @@ class GeneralInfo extends Component {
                         className={classes.textField}
                         margin="normal"
                       />
-                      <IconButton aria-label="Copy" onClick={this.copyURL} className={classes.margin}>
-                        <FileCopyIcon fontSize="small" />
-                      </IconButton>
+                      <Tooltip title="clickToCopyLink">
+                        <IconButton aria-label="Copy" onClick={this.copyURL} className={classes.margin}>
+                          <FileCopyIcon fontSize="small" />
+                        </IconButton>
+                      </Tooltip>
                       <Typography color="textSecondary" variant="caption" gutterBottom> * click the copy icon to copy the the clone URL </Typography>
                   </CardContent>
                   </Card>

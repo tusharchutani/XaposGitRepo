@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
-//TODO: Concider making this pure component
 class Contrubters extends Component {
 
  constructor(){
@@ -32,7 +31,7 @@ class Contrubters extends Component {
         <div>
             <Grid container spacing={24}>
                 {contributors.map((contributor)=>(
-                    <Grid className={classes.contributorContainer} item xs={12} md={4}>
+                    <Grid item xs={12} md={4}>
                        <Card>
                            <CardHeader
                             avatar={
