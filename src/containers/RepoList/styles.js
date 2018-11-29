@@ -1,4 +1,4 @@
-import { sideMenuWidth } from  '../../constants/stylingConstants';
+const sideMenuWidth = 330;
 
 const styles = theme => ({
 

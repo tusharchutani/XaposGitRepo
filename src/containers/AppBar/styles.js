@@ -1,5 +1,4 @@
 import { fade } from '@material-ui/core/styles/colorManipulator';
-import { sideMenuWidth } from '../../constants/stylingConstants';
 
 const styles = theme => ({
   root: {

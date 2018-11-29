@@ -1,5 +1,5 @@
 import { FETCH_REPOS, FETCH_REPO_INFO, SEARCH_REPOS_FETCH } from '../constants/action-constants';
-import { all, takeEvery, takeLatest } from "redux-saga/effects";
+import { all, takeLatest } from "redux-saga/effects";
 import { getRepoList, searchRepos } from './repos';
 
 import { fork } from 'redux-saga/effects';
