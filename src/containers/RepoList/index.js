@@ -1,15 +1,15 @@
-import { FETCH_REPOS, FETCH_REPO_INFO } from '../../constants/action-constants';
 import React, { Component } from 'react';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
+import { FETCH_REPO_INFO } from '../../constants/action-constants';
 import Item from './Item';
 import List from '@material-ui/core/List';
 import { connect } from "react-redux";
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
-class Repolist extends Component {
+export class Repolist extends Component {
   
   constructor(){
     super();
@@ -23,9 +23,6 @@ class Repolist extends Component {
       this.setState({selected:-1});
     }
 
-  }
-  componentDidMount(){
-    this.props.getRepoList();
   }
 
   updatedRepoArray = () =>{
@@ -78,7 +75,6 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-      getRepoList: () => dispatch({type: FETCH_REPOS}),
       getRepoInfo: (repoInfo) => dispatch({type: FETCH_REPO_INFO, payload:repoInfo})
     }
 }
