@@ -36,7 +36,7 @@ class MarkdownFile extends Component {
 
     return (
             <React.Fragment>
-                <Typography gutterBottom component="h3" variant="title">READ ME</Typography>
+                <Typography gutterBottom variant="h6">READ ME</Typography>
                 <Paper id="readmeContainer" className={classes.readMeContainer}>
                   <article className={classes.readMe} dangerouslySetInnerHTML={{__html: this.state.readMe}}></article>
                 </Paper>

@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import styles from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
-export class Repolist extends Component {
+class Repolist extends Component {
   
   constructor(){
     super();

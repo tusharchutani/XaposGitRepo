@@ -44,9 +44,6 @@ const mapDispatchToProps = dispatch =>{
     getRepoList: () => dispatch({type: FETCH_REPOS}),
   }
 }
-const mapStateToProps = () =>{
-
-}
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(App));
+export default connect(()=>({}),mapDispatchToProps)(withStyles(styles)(App));

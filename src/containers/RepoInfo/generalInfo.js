@@ -17,7 +17,7 @@ let Section = (props) => {
   const { classes } = props;
   return (
     <section className={classes.section}>
-      <Typography gutterBottom component="h4" variant="title"> {props.title} </Typography>
+      <Typography gutterBottom variant="h6"> {props.title} </Typography>
       {props.children}
     </section>)
 };
@@ -100,12 +100,12 @@ class GeneralInfo extends Component {
     return (
         <div>
               <Section title="Description">
-                <Typography color="textPrimary" variant="body1"> {data.description} </Typography>
+                <Typography color="textPrimary"> {data.description} </Typography>
               </Section>
               <Section title="Clone">
                 <Card className={classes.gitClone}>
                     <CardContent>
-                      <Typography component="h3" variant="title" color="textPrimary"> Clone with HTTPS </Typography>
+                      <Typography variant="h6" color="textPrimary"> Clone with HTTPS </Typography>
                       <Typography color="textPrimary"> Use Git or checkout with SVN using the web URL. </Typography>
                       <TextField
                         id="standard-disabled"

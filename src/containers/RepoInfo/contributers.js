@@ -30,8 +30,8 @@ class Contrubters extends Component {
     return (
         <div>
             <Grid container spacing={24}>
-                {contributors.map((contributor)=>(
-                    <Grid item xs={12} md={4}>
+                {contributors.map((contributor, index)=>(
+                    <Grid key={index} item xs={12} md={4}>
                        <Card>
                            <CardHeader
                             avatar={
@@ -55,7 +55,7 @@ class Contrubters extends Component {
 }
 
 
-Contrubters.PropTypes = {
+Contrubters.propTypes = {
     contributers: PropTypes.arrayOf(PropTypes.shape({
         username: PropTypes.string.isRequired,
         avatar_url: PropTypes.string.isRequired,

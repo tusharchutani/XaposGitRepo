@@ -33,7 +33,7 @@ class RepoInfo extends Component {
     const { currentView } = this.state;
     return (         
     <div className="repoInfo">          
-    <Typography gutterBottom color="textPrimary" component="h1" variant="display1"> {data.fullName} </Typography>
+    <Typography gutterBottom color="textPrimary" variant="h4"> {data.fullName} </Typography>
       <a href={data.htmlURL}>{data.htmlURL}</a>
     <Divider className={classes.titleDivider}/>
 
@@ -66,7 +66,7 @@ class RepoInfo extends Component {
     
     return (
         <main className={classes.repoInfoContainer}>
-          {isEmpty(data) && <Typography gutterBottom color="textSecondary" component="h1" variant="display1"> No Repo Selected </Typography>}
+          {isEmpty(data) && <Typography gutterBottom color="textSecondary" variant="h3"> No Repo Selected </Typography>}
           {!isEmpty(data) && this.renderRepoInfo(data)}
         </main>
     );

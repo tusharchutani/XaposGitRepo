@@ -13,32 +13,22 @@ import { withStyles } from '@material-ui/core/styles';
 
 class AppBar extends Component {
   
-  
   onSearch = (e) =>{
     this.props.search(e.target.value);
   }
   render() {
   const { classes } = this.props;
-
-    
     return (
         <MaterialAppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" color="inherit" noWrap>
               Facebook's Git Repo
             </Typography>
-
-            { this.props.isLoading &&
+            {this.props.isLoading &&
             <div className={classes.loadingContainer}>
               <CircularProgress color="secondary" className={classes.circularProgress}/>
             </div>}
-            <div>            
-              
-            </div>
-
             <div className={classes.grow} />
-
-
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />

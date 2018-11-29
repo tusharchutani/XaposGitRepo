@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Chip from '@material-ui/core/Chip';
 import EyeIcon from '@material-ui/icons/RemoveRedEyeRounded';
 import ForkIcon from '@material-ui/icons/CallSplit'
+import PropTypes from 'prop-types';
 import StarIcon from '@material-ui/icons/Star';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
@@ -38,7 +39,7 @@ class Item extends Component {
       <Card className={cardClassName}>
         <CardActionArea onClick={this.onSelect}>
             <CardContent>
-                <Typography variant="title" color="textPrimary"> {this.props.name} </Typography>
+                <Typography variant="h6" color="textPrimary"> {this.props.name} </Typography>
                 <Typography color="textSecondary"> {this.formatText(this.props.description)} </Typography>
                 <div>
                   <Tooltip  title={`${this.props.watcherCount} watchers`}>
@@ -69,12 +70,12 @@ class Item extends Component {
   }
 }
 
-Item.defaultProps = {
-  name:'-',
-  description:'No description',
-  watcherCount:0,
-  starsCount:0,
-  forkCount:0
+Item.protoType = {
+  name:PropTypes.string.isRequired,
+  description:PropTypes.string.isRequired,
+  watcherCount:PropTypes.number.isRequired,
+  starsCount:PropTypes.number.isRequired,
+  forkCount:PropTypes.number.isRequired
 }
 
 export default withStyles(styles)(Item);
