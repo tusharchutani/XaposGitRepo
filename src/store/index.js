@@ -11,10 +11,7 @@ var defaultState = {};
 
 function configigureStore(initialState=defaultState){
     const sagaMiddleware = createSagaMiddleware();
-    var store = createStore(rootReducer,compose(
-            applyMiddleware(sagaMiddleware)
-            // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-            ));
+    var store = createStore(rootReducer,compose(applyMiddleware(sagaMiddleware)));
 
     sagaMiddleware.run(rootSaga);
     return store;
